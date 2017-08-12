@@ -7,7 +7,7 @@
 
 Asegurate de tener node.js instalado, ya que varias tools dependen de node. Recomendamos instalar la version `6.11 (LTS)` que podes descargar de la pagina de node.
 
-https://nodejs.org/es/
+- https://nodejs.org/es/
 
 ### Verificar la instalación
 
@@ -56,7 +56,7 @@ Ese comando deberia abrir el editor con el archivo `test.elm` para editar.
 
 Una de las herramientas mas populares del ecosistema de Elm es `elm-format`, que permite darle un formato unificado al codigo Elm, de modo que el codigo Elm siempre se ve igual independientemente de quien lo escriba. De este modo la comunidad se las largas discuciones acerca de "coding rules" que no llevan a ningun lado.
 
-https://github.com/avh4/elm-format
+- https://github.com/avh4/elm-format
 
 ### Intalar elm-format
 
@@ -106,8 +106,28 @@ Por ultimo, edita las preferencias del Editor para habilitar el "format on save"
 
 Reinicia el Editor y repeti la prueba que hicimos en `elm-format` pero simplemente pegando el primer codigo en el Editor y luego guardando. El codigo deberia formatearse automaticamente a la segunda version. 
 
-Ya tenes todo listo para empezar!
 
+## create-elm-app
+
+Con elm-reactor es el comando "oficial" para crear aplicaciones con Elm. Sin embargo durante este workshop, vamos a estar utilizando create-elm-app, un proyecto basado en create-react-app, que usa Webpack internamente.
+
+- https://github.com/halfzebra/create-elm-app
+
+### Instalacion
+
+- `npm install create-elm-app -g`
+
+### Verificar la instalación
+
+Luego de instalar esta tool, simplemente ejecuta el siguiente comando en la consola:
+
+- `create-elm-app my-app`
+- `cd my-app/`
+- `elm-app start`
+
+Abri el navegador en `localhost:3000` y deberias ver una pagina con el logo de Elm y el texto "Your Elm App is working!"
+
+Ya tenes todo listo para empezar!
 
 ## Extra: Fira Code
 
