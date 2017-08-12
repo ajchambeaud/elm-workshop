@@ -21,7 +21,7 @@ Los archivos estaticos que van a usarse durante la compilacion estan dentro del 
 Todo el codigo de nuestra applicacion se encuentra dentro de la carpera `src`. Ahi vas a ver tres archivos inicialmente, un archivo '.js', un archivo `.css` y un archivo `.elm`. Abri el archivo JS y trata de entender el contenido. Ese archivo es el punto de entrada de la aplicacion web. Lo unico que hace es importar el archivo principal de Elm y embeber la aplicacion de Elm en el div root.
 
 
- ## 2 - Borrando coódigo
+ ## 2 - Borrando código
 
  La consigna es simple, abrimos el archivo `Main.elm` y empezamos a borrar todo lo que este dentro del los comments Model, Update y View. Ya veremos mas adelante que son esas cosas. Guardamos el archivo y vemos que pasa.
 
@@ -67,7 +67,7 @@ main =
 ```
 
 El error de compilacion cambio, aun hay variables que que no existen. A este punto podemos mencionar que `main` es el punto de entrada de una aplicacion Elm. No vamos a decir aun que es main, pero podemos ver que en nuestro codigo se encuentra presente en dos lugares, en una asignacion, donde pusimos ingenuamente nuestro "Hello World", y sobre la asignacion se encuentra lo que se conoce como `Type Annotation`, que sirve para decirle al compilador, de que `type` es main. Pero que es `Program Never Model Msg`? Aun no lo sabemos, pero que tal si dejamos que el compilador se de cuenta de que type es main?
-Seguimos borrando codigo, borremos ahora la linea de la type anitation de forma que el codego quede asi:
+Seguimos borrando codigo, borremos ahora la linea de la type anotation de forma que el codego quede asi:
 
 
 ```
@@ -87,13 +87,15 @@ El compilador aun no esta feliz! leamos cuidadosamente el mensaje de error. Los 
 
 Tenemos 2 `unused import`. Estamos importando modulos que despues no usamos.
 
-```-- unused import - ejercicios/01-hello-world/app/src/Main.elm
+```
+-- unused import - ejercicios/01-hello-world/app/src/Main.elm
 
 Module `Html` is unused.
 
 3| import Html exposing (Html, div, img, text)
    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Best to remove it. Don't save code quality for later!```
+Best to remove it. Don't save code quality for later!
+```
 
 ```
 -- unused import - ejercicios/01-hello-world/app/src/Main.elm
