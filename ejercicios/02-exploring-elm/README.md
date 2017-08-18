@@ -1,6 +1,6 @@
 # 02 - De compras con Elm
 
-El proposito de este ejercicio es empezar a entender como se hacen programas con el lenguaje Elm. si hiciste el ejercicio anterior, ya sabes como mostrar Html en la pantalla! Ahroa vamos por algo (solo un poco) mas complejo. La consigna es simple, partimos de un string que tiene esta forma:
+El proposito de este ejercicio es empezar a entender como se hacen programas con el lenguaje Elm. Si hiciste el ejercicio anterior, ya sabes como mostrar Html en la pantalla! Ahora vamos por algo (solo un poco) mas complejo. La consigna es simple, partimos de un string que tiene esta forma:
 
 ```
 listaDeCompras : String
@@ -26,7 +26,7 @@ main =
         [ h1 [] [ text "Ejercicio 2" ]
         , p [] [ text "De compras con Elm" ]
         , hr [] []
-        , div [] [ itemTable <| extractItems listaDeCompras ]
+        , div [] []
         ]
 ````
 
