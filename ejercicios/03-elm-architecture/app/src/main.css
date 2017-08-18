@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100px;
+  background-color: gray;
+  padding: 10px;
+  margin: 10px;
+  width: 150px;
+}

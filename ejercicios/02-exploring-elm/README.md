@@ -207,4 +207,3 @@ Tenemos que crear una funcion con este type: `extractItems: String -> List Item`
 - http://package.elm-lang.org/packages/elm-lang/core/5.1.1/List
 - http://package.elm-lang.org/packages/elm-lang/core/5.1.1/Maybe
 - http://package.elm-lang.org/packages/elm-lang/core/5.1.1/Result
-
