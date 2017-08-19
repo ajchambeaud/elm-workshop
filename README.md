@@ -8,12 +8,30 @@ En este workshop veremos una introducción a la creación de interfaces web con 
 
 Los asistentes al workshop deberán traer su ambiente de desarrollo Elm listo para empezar a trabajar. Podés seguir la guía de instalación que está en:
 
-- `ejercicios/00-instalacion-del-entorno`
+- [Guia de instalación](https://github.com/ajchambeaud/elm-workshop/tree/master/ejercicios/00-environment)
+
+## Clonar el proyecto
+
+- `git clone https://github.com/ajchambeaud/elm-workshop`
 
 ## Ejercicios
 
 La actividad se desarrolla en una serie de ejercicios que los asistentes van a ir resolviendo junto con el guía del workshop. Los mismos se encuentran en este repo dentro de la carpeta `ejercicios`.
 
+- [01 - Hello World](https://github.com/ajchambeaud/elm-workshop/tree/master/ejercicios/01-hello-world)
+- [02 - Exploring Elm](https://github.com/ajchambeaud/elm-workshop/tree/master/ejercicios/02-exploring-elm)
+- [03 - Elm Architecture](https://github.com/ajchambeaud/elm-workshop/tree/master/ejercicios/03-elm-architecture)
+- [04 - Elm Architecture Challenge](https://github.com/ajchambeaud/elm-workshop/tree/master/ejercicios/04-elm-architecture-challenge)
+- [05 - Server Interop](https://github.com/ajchambeaud/elm-workshop/tree/master/ejercicios/05-server-interop)
+- [06 - JS Interop](https://github.com/ajchambeaud/elm-workshop/tree/master/ejercicios/06-js-interop)
+
 ## Soluciones
 
-Dentro de la carpeta `soluciones` vas a encontrar todos los ejercicios resueltos. Utilizá esta carpeta sólo si te bloqueaste con algún problema de sintaxis para poder avanzar. La idea es que cada asistente vaya "codeando" en vivo junto con el orador ya que el mismo irá explicando los paso a paso e introduciendo conceptos nuevos en el camino. Si estás resolviendo el worshop por tu cuenta, en cada ejercico encontrarás un README con una explicación y una guía para resolverlo. 
+Dentro de la carpeta `soluciones` vas a encontrar todos los ejercicios resueltos. Utiliza esta carpeta solo si estas bloqueado con algun problema de syntaxis para poder avanzar. La idea es que cada asistente vaya "codeando" en vivo junto con el orador ya que el mismo ira explicandolos paso a paso e introduciendo conceptos nuevos en el camino. Si estas resolviendo el worshop por tu cuenta, en cada ejercico encontraras un readme con una explicacion y una guia para resolverlo. 
+
+- [01 - Hello World](https://github.com/ajchambeaud/elm-workshop/tree/master/soluciones/01-hello-world)
+- [02 - Exploring Elm](https://github.com/ajchambeaud/elm-workshop/tree/master/soluciones/02-exploring-elm)
+- [03 - Elm Architecture](https://github.com/ajchambeaud/elm-workshop/tree/master/soluciones/03-elm-architecture)
+- [04 - Elm Architecture Challenge](https://github.com/ajchambeaud/elm-workshop/tree/master/soluciones/04-elm-architecture-challenge)
+- [05 - Server Interop](https://github.com/ajchambeaud/elm-workshop/tree/master/soluciones/05-server-interop)
+- [06 - JS Interop](https://github.com/ajchambeaud/elm-workshop/tree/master/soluciones/06-js-interop)
