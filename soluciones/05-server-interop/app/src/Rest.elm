@@ -7,8 +7,8 @@ import RemoteData exposing (..)
 import Types exposing (..)
 
 
-characterDecoder : Decoder Planet
-characterDecoder =
+planetDecoder : Decoder Planet
+planetDecoder =
     decode Planet
         |> required "name" string
         |> required "rotation_period" string
@@ -23,7 +23,7 @@ characterDecoder =
 
 listDecoder : Decoder (List Planet)
 listDecoder =
-    at [ "results" ] (list characterDecoder)
+    at [ "results" ] (list planetDecoder)
 
 
 fetchPlanetsCmd : Cmd Msg

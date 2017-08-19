@@ -7,7 +7,7 @@ En este ejercicio vamos a empezar a explorar una de las principales caracteristi
 Si abrimos el archivo `app/Main.elm` vamos a ver que el mismo se encuentra dividido en distintas secciones por comentarios. Vamos hacia el final del archivo:
 
 
-```
+```elm
 ---- PROGRAM ----
 
 
@@ -22,7 +22,7 @@ main =
 
 Vemos que ahora `main` en lugar de ser de tipo `Html msg` como en los ejercicios anteriores, es de tipo `Program Never Model Msg`. Digamos por ahora que es de tipo `Program` y olvidemos de momento todo lo demas. Los ejemplos anteriores eran estaticos, en el sentido de que no tenian ningun tipo de interacción con el usuario. `Program` es una estructura de datos que tiene informacion adicional para el runtime de Elm ademas de lo necesario para "mostrar algo en pantalla". Un `Program` describe como funciona tu applicación. Para entender el resto de la type anotation es necesario saber conocer un poco mas la arquitectura de Elm. Pasemos primero a ver como creamos un programa y dejemos para mas adelante los detalles del type:
 
-```
+```elm
 Html.beginnerProgram
     { view = view
     , model = model
@@ -36,7 +36,7 @@ Estamos usando la funcion `beginnerProgram` que crea una version basica de la El
 
 Model es la estructura de datos que representa el estado de tu aplicacion. Busquemos el codigo de model mas arriba en el codigo de la app.
 
-```
+```elm
 ---- MODEL ----
 
 
@@ -57,7 +57,7 @@ Asi como esta, lo que el codigo representa es: se define un type alias con el id
 Una vez que ya sabemos que tipo informacion maneja nuestra app y como la vamos a representar, el siguiente paso es definir la capa de presentación. La vista en Elm se representa como una funcion pura del modelo. Es decir, tenemos que definir una funcion `view` que recibe el modelo y devuelva algo de tipo `Html Msg`. Veamos el código que genera create-elm-app por nosotros para la parte de la vista.
 
 
-```
+```elm
 ---- VIEW ----
 
 
@@ -76,7 +76,7 @@ Como ya estuvimos trabajando con funciones que devuelven Html, esta funcion no d
 Ya sabemos que estructura tiene el state de nuestra aplicacion (model) y ya sabemos como se va a representar esa informacion (view). Para tener un programa funcional sin embargo, nos falta una ultima pieza de informacion: coómo se transforma el estado. Si el estado de la aplicacion nunca cambia la aplicacion no tendria ningun tipo de interaccion con el mundo exterior. La funcion update representa el modo en el que el modelo se trasforma como respuesta a interacciones de usuario. Veamos el codigo de la funcion update generada:
 
 
-```
+```elm
 ---- UPDATE ----
 
 
@@ -102,14 +102,14 @@ Un contador es el "Hola mundo" del frontend. Basicamente porque permite contesta
 
 Empecemos definiendo el modelo. Vamos a hacer un contador por lo tanto solo necesitamos un numero entero. Modificamos el modelo de esta forma:
 
-```
+```elm
 type alias Model =
     { count : Int }
 ```
 
 Nuestro record tiene un solo field `count` que mantiene la cuenta y es de tipo `Int`
 
-```
+```elm
 model : Model
 model =
     { count = 0 }
@@ -122,7 +122,7 @@ El valor inicial del modelo es un record con el field `count` inicializado en ce
 
 Nuestra funcion vista entonces deberia tener solamente un texto para mostrar el valor de `count` y dos buttons. Reemplaza el codigo de la vista por:
 
-```
+```elm
 view : Model -> Html Msg
 view model =
     div
@@ -142,7 +142,7 @@ Nota:
 
 El usuario unicamente puede hacer click en alguno de los botones. Modifiquemos la definicion de `Msg` para expresar las dos acciones que el usuario puede realizar.
 
-```
+```elm
 type Msg
     = Increase
     | Decrease
@@ -150,7 +150,7 @@ type Msg
 
 Modifiquemos la funcion de la vista para que cuando el usuario haga click en los botones, en efecto se generen estos mensajes para el runtime de Elm.
 
-```
+```elm
 view : Model -> Html Msg
 view model =
     div
@@ -165,7 +165,7 @@ view model =
 
 Nos falta definir como afectan los mensages generados por las acciones del usuario al state de la applicacion.  Para eso en la funcion `update` hacemos pattern maching sobre el valor del parametro `msg`. Que como es de tipo `Msg` sabemos que solo puede tomar dos valores: `Increase` y `Decrease`.
 
-```
+```elm
 update : Msg -> Model -> Model
 update msg model =
     case msg of

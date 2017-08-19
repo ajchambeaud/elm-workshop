@@ -4,7 +4,7 @@ Ahora que ya tenes una idea de como funciona un programa Elm, tengo un pequeño 
 
 ## Hint: partiremos del siguiente modelo:
 
-```
+```elm
 type alias Counter =
     { id : Int
     , count : Int

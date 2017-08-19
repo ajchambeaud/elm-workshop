@@ -1,5 +1,9 @@
 # Elm: Desarrollo web para perfeccionistas.
 
+## Brevisima Intro
+
+- [Presentacion](https://docs.google.com/presentation/d/1lZw4Tn-kic8MugeECeyAMn9YzEgFCGfAozw5g5hL1ro/pub?start=false&loop=false&delayms=3000&slide=id.p)
+
 ## Descripción
 
 En este workshop veremos una introducción a la creación de interfaces web con lenguaje Elm (un lenguaje funcional puro que compila a JS). Comenzaremos explorando las características del lenguaje con ejemplos sencillos, luego estudiaremos la Arquitectura Elm (La base de librerías como Redux) y finalmente veremos ejemplos de comunicación con el servidor y con JS. La idea es que los asistentes vayan codeando a la par del orador y que puedan familiarizarse lo más posible con el lenguaje y el paradigma durante el tiempo que dure el workshop.
