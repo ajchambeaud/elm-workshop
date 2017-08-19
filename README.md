@@ -1,12 +1,12 @@
 # Elm: Desarrollo web para perfeccionistas.
 
-## Descripcion
+## Descripción
 
-En este workshop veremos una introducción a la creación de interfaces web con lenguaje Elm (un lenguaje funcional puro que compila a JS). Comenzaremos explorando las características del lenguaje con ejemplos sencillos, luego estudiaremos la Arquitectura Elm (La base de librerías como Redux) y finalmente veremos ejemplos de comunicación con el servidor y con JS. La idea es que los asistentes vayan codeando a la par del orador y que puedan familiarizarse lo mas posible con el lenguaje y el paradigma durante el tiempo que dure el workshop.
+En este workshop veremos una introducción a la creación de interfaces web con lenguaje Elm (un lenguaje funcional puro que compila a JS). Comenzaremos explorando las características del lenguaje con ejemplos sencillos, luego estudiaremos la Arquitectura Elm (La base de librerías como Redux) y finalmente veremos ejemplos de comunicación con el servidor y con JS. La idea es que los asistentes vayan codeando a la par del orador y que puedan familiarizarse lo más posible con el lenguaje y el paradigma durante el tiempo que dure el workshop.
 
-## Instalacion del entorno
+## Instalación del entorno
 
-Los asistentes al workshop deberan traer su ambiente de desarrollo Elm listo para empezar a trabajar. Podes seguir la guia de instalacioón que esta en:
+Los asistentes al workshop deberán traer su ambiente de desarrollo Elm listo para empezar a trabajar. Podés seguir la guía de instalación que está en:
 
 - [Guia de instalación](https://github.com/ajchambeaud/elm-workshop/tree/master/ejercicios/00-environment)
 
@@ -16,7 +16,7 @@ Los asistentes al workshop deberan traer su ambiente de desarrollo Elm listo par
 
 ## Ejercicios
 
-La actuvidad se desarrolla en unsa serie de ejercicios que los asistentes van a ir resolviendo junto con el guia del workshop. Los mismos se encuentran en este repo dentro de la carpeta `ejercicios`.
+La actividad se desarrolla en una serie de ejercicios que los asistentes van a ir resolviendo junto con el guía del workshop. Los mismos se encuentran en este repo dentro de la carpeta `ejercicios`.
 
 - [01 - Hello World](https://github.com/ajchambeaud/elm-workshop/tree/master/ejercicios/01-hello-world)
 - [02 - Exploring Elm](https://github.com/ajchambeaud/elm-workshop/tree/master/ejercicios/02-exploring-elm)
@@ -35,4 +35,3 @@ Dentro de la carpeta `soluciones` vas a encontrar todos los ejercicios resueltos
 - [04 - Elm Architecture Challenge](https://github.com/ajchambeaud/elm-workshop/tree/master/soluciones/04-elm-architecture-challenge)
 - [05 - Server Interop](https://github.com/ajchambeaud/elm-workshop/tree/master/soluciones/05-server-interop)
 - [06 - JS Interop](https://github.com/ajchambeaud/elm-workshop/tree/master/soluciones/06-js-interop)
-
