@@ -11,7 +11,7 @@ Asegurate de tener node.js instalado, ya que varias tools dependen de node. Reco
 
 ### Verificar la instalación
 
-Al finalizar la instalacion, abri la consola de tu sistema operativo y ejecuta los sigueintes comandos para asegurarte de que todo se encuentra funcionando correctamente.
+Al finalizar la instalacion, abri la consola de tu sistema operativo y ejecuta los siguientes comandos para asegurarte de que todo se encuentra funcionando correctamente.
 
 - `node -v` (deberias ver la salida `v6.11.2`)
 - `npm -v` (deberias ver la salida `3.10.10`)
@@ -54,7 +54,7 @@ Ese comando deberia abrir el editor con el archivo `test.elm` para editar.
 
 ## elm-format
 
-Una de las herramientas mas populares del ecosistema de Elm es `elm-format`, que permite darle un formato unificado al codigo Elm, de modo que el codigo Elm siempre se ve igual independientemente de quien lo escriba. De este modo la comunidad se las largas discuciones acerca de "coding rules" que no llevan a ningun lado.
+Una de las herramientas mas populares del ecosistema de Elm es `elm-format`, que permite darle un formato unificado al codigo Elm, de modo que el codigo Elm siempre se ve igual independientemente de quien lo escriba. De este modo la comunidad se ahorra las largas discusiones acerca de "coding rules" que no llevan a ningun lado.
 
 - https://github.com/avh4/elm-format
 
@@ -109,7 +109,7 @@ Reinicia el Editor y repeti la prueba que hicimos en `elm-format` pero simplemen
 
 ## create-elm-app
 
-Con elm-reactor es el comando "oficial" para crear aplicaciones con Elm. Sin embargo durante este workshop, vamos a estar utilizando create-elm-app, un proyecto basado en create-react-app, que usa Webpack internamente.
+`elm-reactor` es el comando "oficial" para crear aplicaciones con Elm. Sin embargo durante este workshop, vamos a estar utilizando `create-elm-app`, un proyecto basado en `create-react-app`, que usa Webpack internamente.
 
 - https://github.com/halfzebra/create-elm-app
 
