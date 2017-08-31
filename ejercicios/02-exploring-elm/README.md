@@ -35,7 +35,7 @@ main =
 
 Elm es un lenguaje funcional de tipado estático y fuertemente tipado. El type system de Elm es muy potente, pero no se parece en nada a los lenguajes tipados tradicionaes (Java, C#, C). Sino que viene de otra famila de lenguajes (ML, Haskell, F#). En Elm, por ejemplo, no tenemos Classes (ni las vamos a tener). Al ser un lenguaje funcional, el programa está compuesto por datos y funciones que operan sobre esos datos. Los datos que tu programa puede operar se representan con estructuras de datos abstractas. Lo primero que tenemos que hacer en un programa Elm, es definir con qué datos nuestro sistema opera, y cómo vamos a representar esos datos.
 
-Vamos con los simples. La consigna habla de descipciones, de precios y de tablas. Para ese tipo de datos simples, contamos con las estructuras de datos nativas de Elm. Vamos a usar un `Float` para representar precios, `String` para representar descripciones y, como es una tabla, vamos a tener un lista de datos, y la misma podemos representarla usando el type `List`. 
+Vamos con los simples. La consigna habla de descripciones, de precios y de tablas. Para ese tipo de datos simples, contamos con las estructuras de datos nativas de Elm. Vamos a usar un `Float` para representar precios, `String` para representar descripciones y, como es una tabla, vamos a tener un lista de datos, y la misma podemos representarla usando el type `List`. 
 
 Querés aprender mas sobre estos types? Estos types forman parte del módulo Core de Elm:
 
@@ -51,7 +51,7 @@ Además de los types estructurales, lo más importante es definir las entidades 
 
 - http://elm-lang.org/docs/records
 
-Un record es lo más parecido a un objeto en JS, con la diferencia pricipal de que es inmutable como todas las estructuras de datos en Elm, y algunas otras diferencias que iremos viendo sobre la marcha.
+Un record es lo más parecido a un objeto en JS, con la diferencia principal de que es inmutable como todas las estructuras de datos en Elm, y algunas otras diferencias que iremos viendo sobre la marcha.
 
 Nuestros items podrían representarse de este modo:
 
@@ -201,7 +201,7 @@ itemTable list =
 
 ## 5 - Remover las variables hardcodeadas y crear una función `extractItems` que reciba un String (`listaDeCompras`) y devuelva una lista de ítems
 
-Tenemos que crear una función con este type: `extractItems: String -> List Item`. Para ello vamos a utilizar varias de las funciones de los módulos `String`, `List`, y types `Result` y `Maybe` que nos van a ayudar a lidear con operaciones que potencialmente pueden fallar y con datos que pueden estar presentes o no (en Elm no tenemos valores `null` ni bloques `try`/`catch`).
+Tenemos que crear una función con este type: `extractItems: String -> List Item`. Para ello vamos a utilizar varias de las funciones de los módulos `String`, `List`, y types `Result` y `Maybe` que nos van a ayudar a lidiar con operaciones que potencialmente pueden fallar y con datos que pueden estar presentes o no (en Elm no tenemos valores `null` ni bloques `try`/`catch`).
 
 - http://package.elm-lang.org/packages/elm-lang/core/5.1.1/String
 - http://package.elm-lang.org/packages/elm-lang/core/5.1.1/List
