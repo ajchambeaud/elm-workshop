@@ -31,7 +31,7 @@ La actividad se desarrolla en una serie de ejercicios que los asistentes van a i
 
 ## Soluciones
 
-Dentro de la carpeta `soluciones` vas a encontrar todos los ejercicios resueltos. Utiliza esta carpeta solo si estas bloqueado con algun problema de syntaxis para poder avanzar. La idea es que cada asistente vaya "codeando" en vivo junto con el orador ya que el mismo ira explicandolos paso a paso e introduciendo conceptos nuevos en el camino. Si estas resolviendo el worshop por tu cuenta, en cada ejercico encontraras un readme con una explicacion y una guia para resolverlo. 
+Dentro de la carpeta `soluciones` vas a encontrar todos los ejercicios resueltos. Utiliza esta carpeta solo si estas bloqueado con algun problema de sintaxis para poder avanzar. La idea es que cada asistente vaya "codeando" en vivo junto con el orador ya que el mismo ira explicandolos paso a paso e introduciendo conceptos nuevos en el camino. Si estas resolviendo el workshop por tu cuenta, en cada ejercico encontraras un readme con una explicacion y una guia para resolverlo. 
 
 - [01 - Hello World](https://github.com/ajchambeaud/elm-workshop/tree/master/soluciones/01-hello-world)
 - [02 - Exploring Elm](https://github.com/ajchambeaud/elm-workshop/tree/master/soluciones/02-exploring-elm)
