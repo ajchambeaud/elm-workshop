@@ -20,7 +20,7 @@ main =
         }
 ```
 
-Vemos que ahora `main` en lugar de ser de tipo `Html msg` como en los ejercicios anteriores, es de tipo `Program Never Model Msg`. Digamos por ahora que es de tipo `Program` y olvidemos de momento todo lo demás. Los ejemplos anteriores eran estáticos, en el sentido de que no tenían ningún tipo de interacción con el usuario. `Program` es una estructura de datos que tiene información adicional para el runtime de Elm además de lo necesario para "mostrar algo en pantalla". Un `Program` describe cómo funciona tu aplicación. Para entender el resto de la type annotation es necesario saber conocer un poco más la arquitectura de Elm. Pasemos primero a ver cómo creamos un programa y dejemos para más adelante los detalles del type:
+Vemos que ahora `main` en lugar de ser de tipo `Html msg` como en los ejercicios anteriores, es de tipo `Program Never Model Msg`. Digamos por ahora que es de tipo `Program` y olvidemos de momento todo lo demás. Los ejemplos anteriores eran estáticos, en el sentido de que no tenían ningún tipo de interacción con el usuario. `Program` es una estructura de datos que tiene información adicional para el runtime de Elm además de lo necesario para "mostrar algo en pantalla". Un `Program` describe cómo funciona tu aplicación. Para entender el resto de la type annotation es necesario conocer un poco más la arquitectura de Elm. Pasemos primero a ver cómo creamos un programa y dejemos para más adelante los detalles del type:
 
 ```elm
 Html.beginnerProgram
@@ -49,7 +49,7 @@ model =
     {}
 ```
 
-Así como está, lo que el cádigo representa es: se define un type alias con el identificador `Model` que representa un record sin campos. Se inicializa una variable `model` de tipo `Model` con un record vacío. Evidentemente un record vacío no resulta muy útil para definir el estado de una aplicación. Lo primero que hacemos al diseñar una app en Elm es definir cómo se vería este modelo. Qué información queremos representar y cuál es la mejor forma de representarla. Una vez que definimos el `type` del modelo creamos una instancia que representa el estado inicial del mismo. Esta instancia es lo que nos pide el programa Elm, junto con el type que es uno de los 'parámetros' que le pasamos a 'Program'. De este modo el runtime de Elm ya sabe qué tipo de datos maneja tu aplicación y cuál es su estado inicial.
+Así como está, lo que el codigo representa es: se define un type alias con el identificador `Model` que representa un record sin campos. Se inicializa una variable `model` de tipo `Model` con un record vacío. Evidentemente un record vacío no resulta muy útil para definir el estado de una aplicación. Lo primero que hacemos al diseñar una app en Elm es definir cómo se vería este modelo. Qué información queremos representar y cuál es la mejor forma de representarla. Una vez que definimos el `type` del modelo creamos una instancia que representa el estado inicial del mismo. Esta instancia es lo que nos pide el programa Elm, junto con el type que es uno de los 'parámetros' que le pasamos a 'Program'. De este modo el runtime de Elm ya sabe qué tipo de datos maneja tu aplicación y cuál es su estado inicial.
 
 
 ### View
@@ -90,12 +90,12 @@ update msg model =
 
 ```
 
-En las primeras líneas definimos el type `Msg`. `Msg` generalmente es un `union type` que representa todos los mensajes que el usuario puede generar interactuando con la vista de la aplicación. La única forma de modificar el estado de una aplicación Elm es generando un mensage de typo `Msg` (por ejemplo al interactuar con la vista). Cuando un mensaje es generado desde la vista, el mismo es recibido por el runtime de Elm, y este último llama a nuestra función `update`. La función `update` recibe este mensaje y el estado actual del modelo, y retorna el nuevo modelo.
+En las primeras líneas definimos el type `Msg`. `Msg` generalmente es un `union type` que representa todos los mensajes que el usuario puede generar interactuando con la vista de la aplicación. La única forma de modificar el estado de una aplicación Elm es generando un mensaje de tipo `Msg` (por ejemplo al interactuar con la vista). Cuando un mensaje es generado desde la vista, el mismo es recibido por el runtime de Elm, y este último llama a nuestra función `update`. La función `update` recibe este mensaje y el estado actual del modelo, y retorna el nuevo modelo.
 
 
 ## Ejemplo básico de programa interactivo: Un contador!
 
-Un contador es el "Hola mundo" del frontend. Básicamente porque permite contestar todas las preguntas que toda arquitectura moderna debería poder contestar: Cómo es el state de tu programa? Cómo se ve tu programa? Qué cosas puede hacer el usuario? y Cómo se modifica el state como respuesta a esta interacción. Un contador muestra un número en pantalla y tiene dos botones, uno para incrementar el valor del contador y uno para decrementarlo.
+Un contador es el "Hola mundo" del frontend. Básicamente porque permite contestar todas las preguntas que toda arquitectura moderna debería poder contestar: Cómo es el state de tu programa?, Cómo se ve tu programa?, Qué cosas puede hacer el usuario?, Cómo se modifica el state como respuesta a esta interacción?. Un contador muestra un número en pantalla y tiene dos botones, uno para incrementar el valor del contador y uno para decrementarlo.
 
 
 ### Cómo es el state de tu programa?
@@ -163,7 +163,7 @@ view model =
 
 ### Cómo se modifica el state como respuesta a esta interacción?
 
-Nos falta definir cómo afectan los mensajes generados por las acciones del usuario al state de la aplicación.  Para eso en la función `update` hacemos pattern matching sobre el valor del parámetro `msg`, que como es de tipo `Msg` sabemos que solo puede tomar dos valores: `Increase` y `Decrease`.
+Nos falta definir cómo afectan los mensajes generados por las acciones del usuario al state de la aplicación. Para eso en la función `update` hacemos pattern matching sobre el valor del parámetro `msg`, que como es de tipo `Msg` sabemos que solo puede tomar dos valores: `Increase` y `Decrease`.
 
 ```elm
 update : Msg -> Model -> Model
@@ -176,6 +176,6 @@ update msg model =
             { model | count = model.count - 1 }
 ```
 
-Fijate cómo actualizamos el modelo: en Elm, todas las estructuras de datos son inmutables, por lo tanto no es posible modificar el valor de un record. Existe una sintaxis especial para obtener un record nuevo a partir de la modificación parcial del anterior: `{ model | count = model.count + 1 }`. Con esta línea estamos diciendo que queremos un record igual que `model`, pero que su field `count` sea tenga el valor `model.count + 1`. Como nuestro record tiene un solo field, esto no es necesario, y sería suficiente con devolver `{ count : model.count + 1 }`.
+Fijate cómo actualizamos el modelo: en Elm, todas las estructuras de datos son inmutables, por lo tanto no es posible modificar el valor de un record. Existe una sintaxis especial para obtener un record nuevo a partir de la modificación parcial del anterior: `{ model | count = model.count + 1 }`. Con esta línea estamos diciendo que queremos un record igual que `model`, pero que su field `count` sea tenga el valor `model.count + 1`. Como nuestro record tiene un solo field, esto no es necesario, y sería suficiente con devolver `{ count = model.count + 1 }`.
 
 Ya tenemos nuestro primer programa funcionando!
