@@ -1,15 +1,15 @@
 # 05 - Server interop
 
-En los ejercicios anteriores vimos ejemplos de la Elm Architecture usando la funcion `beginnerProgram` del modulo `Html`. Esta es una version simplificada de un programa Elm, ya que le falta una componente importante: La comunicacion con el servidor. Un programa compuesto unicamente por funciones puras como propone Elm, no puede tener sidde effects. En sidde effect (efecto secundario) es un termino que se le da en el paradigma funcional a cualquier modificacion por parte del codigo de una funcion de un scope que no le pertenece. Es decir, una funcion puede trabajar solo con los parametros que recibe y a partir de ellos generar y retornar un nuevo valor. 
+En los ejercicios anteriores vimos ejemplos de la Elm Architecture usando la funcion `beginnerProgram` del modulo `Html`. Esta es una version simplificada de un programa Elm, ya que le falta una componente importante: La comunicacion con el servidor. Un programa compuesto unicamente por funciones puras como propone Elm, no puede tener side effects. Un side effect (efecto secundario) es un termino que se le da en el paradigma funcional a cualquier modificacion por parte del codigo de una funcion de un scope que no le pertenece. Es decir, una funcion puede trabajar solo con los parametros que recibe y a partir de ellos generar y retornar un nuevo valor. 
 
 ```Una funcion no puede modificar variables globales, hacer una peticion AJAX o leer un archivo bajo el paradigma funcional puro.```
 
 
 ## Comands
 
-Sin sidde effects sin embargo, la utilidad de un programa seria bastante limitada. En algun momento vamos a querer interactuar con el mundo exterior. La forma de resolver este problema dentro de la arquitectura Elm manteniando el codigo que escribimos puro, es delegar los sidde effects en el runtime de Elm mediante unas estructuras de datos especiales llamadas comandos.
+Sin side effects sin embargo, la utilidad de un programa seria bastante limitada. En algun momento vamos a querer interactuar con el mundo exterior. La forma de resolver este problema dentro de la arquitectura Elm manteniendo el codigo que escribimos puro, es delegar los side effects en el runtime de Elm mediante unas estructuras de datos especiales llamadas comandos.
 
-```Un comando es una estructura de dato especial que le da instrucciones al runtime de Elm para llevar a cabo un sidde effect. El comando ademas especifica un mensage que espera recibir del runtime una vez efectuado el sidde effect.```
+```Un comando es una estructura de dato especial que le da instrucciones al runtime de Elm para llevar a cabo un side effect. El comando ademas especifica un mensaje que espera recibir del runtime una vez efectuado el side effect.```
 
 
 ## Program Advance
@@ -36,7 +36,7 @@ init =
     ( { planets = [] }, Cmd.none )
 ```
 
-`init` es una tupla que tiene dos valores. Elm primero es el modelo de la aplicacion, y el segundo valor es una comando. El modelo esta inicializado como un record con un solo field `planets` que es un array vacio. El comando esta inicializado con `Cmd.none` que es un comando especial que le dice al runtime basicamente "no hagas nada".
+`init` es una tupla que tiene dos valores. Elm primero es el modelo de la aplicacion, y el segundo valor es un comando. El modelo esta inicializado como un record con un solo field `planets` que es un array vacio. El comando esta inicializado con `Cmd.none` que es un comando especial que le dice al runtime basicamente "no hagas nada".
 
 ```elm
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -61,7 +61,7 @@ Necesitamos crear un comando para describirle al runtime de Elm el tipo de petic
 
 3 - JSON Decoders
 
-Una vez que el runtime de Elm obtiene una respuesta del servidor, usa la informacion que le facilitamos en el Comand para envolver esa data en un mensaje de tipo `Msg` e invocar a nuestra funcion `update` con el. Como la respuesta del servidor suele ser un json string, el runtime necesita que le pasemos una funcion para trnasformar ese string en una estructura de datos definida por nuestro programa. Esas funciones se conocen como Decoders. En JS tenemos un solo decoder que es `JSON.parse` que lo que hace es intentar transformar el string en un objeto de JS. La conversion de JSON -> JS es automatica, pero en Elm no podemos trabajar de ese modo. Principalmente porque el compilador de Elm necesita saber a priori todas las estructuras de datos con la que nuestro sistema trabaja, no se pueden crear nuevos types en runtime ya que si lo hacemos perderiamos todos los chequeos del compilador y nos arriesgamos a tener excepciones en runtime que es lo que Elm trata de evitar. Los json decoders son uno de los capitulos mas complejos de Elm y lleva un tiempo procesar como funcionan viniendo de JS. Vamos a ver un caso simple usando un modulo llamado [elm-decode-pipeline](http://package.elm-lang.org/packages/NoRedInk/elm-decode-pipeline/latest) que vuelve la tarea un poco mas sensilla.
+Una vez que el runtime de Elm obtiene una respuesta del servidor, usa la informacion que le facilitamos en el Comand para envolver esa data en un mensaje de tipo `Msg` e invocar a nuestra funcion `update` con el. Como la respuesta del servidor suele ser un json string, el runtime necesita que le pasemos una funcion para transformar ese string en una estructura de datos definida por nuestro programa. Esas funciones se conocen como Decoders. En JS tenemos un solo decoder que es `JSON.parse` que lo que hace es intentar transformar el string en un objeto de JS. La conversion de JSON -> JS es automatica, pero en Elm no podemos trabajar de ese modo. Principalmente porque el compilador de Elm necesita saber a priori todas las estructuras de datos con la que nuestro sistema trabaja, no se pueden crear nuevos types en runtime ya que si lo hacemos perderiamos todos los chequeos del compilador y nos arriesgamos a tener excepciones en runtime que es lo que Elm trata de evitar. Los json decoders son uno de los capitulos mas complejos de Elm y lleva un tiempo procesar como funcionan viniendo de JS. Vamos a ver un caso simple usando un modulo llamado [elm-decode-pipeline](http://package.elm-lang.org/packages/NoRedInk/elm-decode-pipeline/latest) que vuelve la tarea un poco mas sencilla.
 
 
 ## Resolviendo el Ejercicio
@@ -103,7 +103,7 @@ type alias WebData a =
 
 ### 2 - Actualizar la vista para tener en cuenta los estados posibles del nuevo modelo
 
-La unica forma de extraer un dato de adentro de un type que lo envuelve es usando pattern maching. El compilador de Elm nos va a obligar a tener en cuenta todos los casos posibles cuando queramos usar algo de tipo WebData en una interfaz, evitando un conocido anti pattern de la UI, que es mostrar un mensaje de "lista vacia" cuando en realidad los datos aun no se terminaron de cargar.
+La unica forma de extraer un dato de adentro de un type que lo envuelve es usando pattern matching. El compilador de Elm nos va a obligar a tener en cuenta todos los casos posibles cuando queramos usar algo de tipo WebData en una interfaz, evitando un conocido anti pattern de la UI, que es mostrar un mensaje de "lista vacia" cuando en realidad los datos aun no se terminaron de cargar.
 
 Modificar el archivo `View.elm` de este modo:
 
@@ -230,7 +230,7 @@ planetDecoder =
 
 Para crearla usamos la funcion `decode` del modulo `elm-decode-pipeline`, que nos permite crear un decoder para cada uno de los fields de nuestro record Planet (en orden) especificando el `field` dentro del json y la funcion decoder que queremos usar para cada field. Como son todos strings en este caso, usamos la funcion `string` en todos ellos.
 
-Finalmente, tenemos todo lo necesario para crear el comando. En este momento nuestro cmando es un alias para `Cmd.none` es decir que le esta diciendo al runtime que no realice ningun sidde effect. Vamos a usar el modulo Http para crear el comando de la siguente forma:
+Finalmente, tenemos todo lo necesario para crear el comando. En este momento nuestro comando es un alias para `Cmd.none` es decir que le esta diciendo al runtime que no realice ningun side effect. Vamos a usar el modulo Http para crear el comando de la siguente forma:
 
 ```elm
 fetchPlanetsCmd : Cmd Msg
