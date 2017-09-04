@@ -1,6 +1,6 @@
 # 06 - JS Interop
 
-Muchas veces necesitamos que nuestra app Elm se comunique con codigo JS por diversos motivos. Desde comunicacion con otra parte de la app o simplemente porque queremos reusar alguna libreria que esta escrita en JS. La forma de interactuar con JS desde Elm, de forma de mantener la seguridad del lado de Elm, es halbar con JS como si hablaramos con un servidor. Para eso usamos los puertos de Elm.
+Muchas veces necesitamos que nuestra app Elm se comunique con codigo JS por diversos motivos. Desde comunicacion con otra parte de la app o simplemente porque queremos reusar alguna libreria que esta escrita en JS. La forma de interactuar con JS desde Elm, de forma de mantener la seguridad del lado de Elm, es hablar con JS como si hablaramos con un servidor. Para eso usamos los puertos de Elm.
 
 ## Elm Ports
 
